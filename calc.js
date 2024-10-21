@@ -1,49 +1,43 @@
-function getInputs() {
-  return {
-    input1: Number(document.getElementById('input1').value),
-    input2: Number(document.getElementById('input2').value),
-  };
-}
+let input1 = document.getElementById('input1');
+let input2 = document.getElementById('input2');
+let div1 = document.getElementById('output');
 
-function displayOutput(result) {
-  document.getElementById('output').innerHTML = result;
-}
+  function calculate(operation) {
+    let ans1 = Number(input1.value);
+    let ans2 = Number(input2.value);
+    let result;
 
-function clearInputs() {
-      document.getElementById('input1').value = ''
-      document.getElementById('input2').value = ''
-      displayOutput(0);
+    switch (operation) {
+      case 'add':
+       result = ans1 + ans2;
+      break;
+      case 'subtract':
+       result = ans1 - ans2;
+      break;
+      case 'divide':
+        result = ans1 / ans2;
+      break;
+      case 'multiply':
+       result = ans1 * ans2;
+      break;
+      case 'modulus':
+        result = ans1 % ans2;
+      break;
+      case 'squareroot':
+        result = Math.sqrt(ans1);
+      break;
+      case 'raisetopower':
+        result = Math.pow(ans1, ans2);
+      break;
+      default:
+        div1.innerHTML = "Unknown operation.";
+      return;
     }
-
-function calculate(operation) {
-  let { input1, input2 } = getInputs()
-  let result;
-
-  switch (operation) {
-    case 'add':
-      result = input1 + input2
-      break;
-    case 'subtract':
-      result = input1 - input2
-      break;
-    case 'divide':
-      result = input2 !== 0 ? input1 / input2 : 'Error';
-      break;
-    case 'multiply':
-      result = input1 * input2
-      break;
-    case 'modulus':
-      result = input1 % input2
-      break;
-    case 'squareroot':
-      result = Math.sqrt(input1)
-      break;
-    case 'raisetopower':
-      result = input1 ** input2
-      break;
-    default:
-      result = 'Invalid Operation'
+    div1.innerHTML = result;
   }
-  
-  displayOutput(result);
-}
+
+  function clearInputs() {
+    input1.value = '';
+    input2.value = '';
+    div1.innerHTML = '';
+  }
