@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Londrina+Sketch&display=swap" rel="stylesheet">
   <title>Calculator</title>
  <link rel="stylesheet" href="calc.css">
 </head>
 <body>
+  <h1>My Little Calculator</h1>
   <main>
     <div id="inputContainer">
       <input type="text" id="input1" placeholder="Enter number">
@@ -14,15 +18,15 @@
     </div>
     <div class="container">
       <div id="btnContainer">
-        <button onclick="calculate('add')">+</button>
-        <button onclick="calculate('subtract')">-</button>
-        <button onclick="calculate('divide')">/</button>
-        <button onclick="calculate('multiply')">*</button>
+        <button onclick="calculate('add')"> + </button>
+        <button onclick="calculate('subtract')"> - </button>
+        <button onclick="calculate('divide')"> / </button>
+        <button onclick="calculate('multiply')"> * </button>
       </div>
       <div id="btnContainer1">
-        <button onclick="calculate('modulus')">%</button>
-        <button onclick="calculate('squareroot')">√</button>
-        <button onclick="calculate('raisetopower')">^</button>
+        <button onclick="calculate('modulus')"> % </button>
+        <button onclick="calculate('squareroot')"> √ </button>
+        <button onclick="calculate('raisetopower')"> ^ </button>
         <button onclick="clearInputs()">C</button>
       </div>
       <div id="output">0</div>
